@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.springframework.security</groupId>
   <artifactId>spring-security-config</artifactId>
-  <version>4.2.13.RELEASE</version>
+  <version>4.2.21.BUILD-SNAPSHOT</version>
   <name>spring-security-config</name>
   <description>spring-security-config</description>
   <url>https://spring.io/spring-security</url>
@@ -30,17 +30,6 @@
     <developerConnection>scm:git:git://github.com/spring-projects/spring-security</developerConnection>
     <url>https://github.com/spring-projects/spring-security</url>
   </scm>
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-framework-bom</artifactId>
-        <version>4.3.23.RELEASE</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
   <dependencies>
     <dependency>
       <groupId>aopalliance</groupId>
@@ -51,7 +40,7 @@
     <dependency>
       <groupId>org.springframework.security</groupId>
       <artifactId>spring-security-core</artifactId>
-      <version>4.2.13.RELEASE</version>
+      <version>4.2.21.BUILD-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -97,28 +86,28 @@
     <dependency>
       <groupId>org.springframework.security</groupId>
       <artifactId>spring-security-ldap</artifactId>
-      <version>4.2.13.RELEASE</version>
+      <version>4.2.21.BUILD-SNAPSHOT</version>
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.springframework.security</groupId>
       <artifactId>spring-security-messaging</artifactId>
-      <version>4.2.13.RELEASE</version>
+      <version>4.2.21.BUILD-SNAPSHOT</version>
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.springframework.security</groupId>
       <artifactId>spring-security-openid</artifactId>
-      <version>4.2.13.RELEASE</version>
+      <version>4.2.21.BUILD-SNAPSHOT</version>
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.springframework.security</groupId>
       <artifactId>spring-security-web</artifactId>
-      <version>4.2.13.RELEASE</version>
+      <version>4.2.21.BUILD-SNAPSHOT</version>
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>
@@ -126,12 +115,24 @@
       <groupId>org.springframework</groupId>
       <artifactId>spring-jdbc</artifactId>
       <scope>compile</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-tx</artifactId>
       <scope>compile</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
       <optional>true</optional>
     </dependency>
     <dependency>
@@ -161,7 +162,7 @@
     <dependency>
       <groupId>cglib</groupId>
       <artifactId>cglib-nodep</artifactId>
-      <version>3.2.10</version>
+      <version>3.2.12</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -175,90 +176,180 @@
       <artifactId>jsr250-api</artifactId>
       <version>1.0</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.12</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>ldapsdk</groupId>
       <artifactId>ldapsdk</artifactId>
       <version>4.1</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.apache.directory.server</groupId>
       <artifactId>apacheds-core</artifactId>
       <version>1.5.5</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.apache.directory.server</groupId>
       <artifactId>apacheds-core-entry</artifactId>
       <version>1.5.5</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.apache.directory.server</groupId>
       <artifactId>apacheds-protocol-ldap</artifactId>
       <version>1.5.5</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.apache.directory.server</groupId>
       <artifactId>apacheds-protocol-shared</artifactId>
       <version>1.5.5</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.apache.directory.server</groupId>
       <artifactId>apacheds-server-jndi</artifactId>
       <version>1.5.5</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.apache.directory.shared</groupId>
       <artifactId>shared-ldap</artifactId>
       <version>0.9.15</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
       <version>2.2.0</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.codehaus.groovy</groupId>
       <artifactId>groovy-all</artifactId>
-      <version>2.4.4</version>
+      <version>2.4.19</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.eclipse.persistence</groupId>
       <artifactId>javax.persistence</artifactId>
       <version>2.1.1</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-entitymanager</artifactId>
       <version>5.0.12.Final</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.hsqldb</groupId>
       <artifactId>hsqldb</artifactId>
       <version>2.3.6</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
       <version>1.10.19</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.openid4java</groupId>
@@ -269,6 +360,10 @@
         <exclusion>
           <artifactId>guice</artifactId>
           <groupId>com.google.code.guice</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
         </exclusion>
       </exclusions>
     </dependency>
@@ -282,6 +377,10 @@
           <artifactId>mockito-all</artifactId>
           <groupId>org.mockito</groupId>
         </exclusion>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
       </exclusions>
     </dependency>
     <dependency>
@@ -289,36 +388,72 @@
       <artifactId>powermock-api-support</artifactId>
       <version>1.6.5</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.powermock</groupId>
       <artifactId>powermock-core</artifactId>
       <version>1.6.5</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.powermock</groupId>
       <artifactId>powermock-module-junit4</artifactId>
       <version>1.6.5</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.powermock</groupId>
       <artifactId>powermock-module-junit4-common</artifactId>
       <version>1.6.5</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.powermock</groupId>
       <artifactId>powermock-reflect</artifactId>
       <version>1.6.5</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>jcl-over-slf4j</artifactId>
       <version>1.7.25</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.spockframework</groupId>
@@ -326,6 +461,10 @@
       <version>0.7-groovy-2.0</version>
       <scope>test</scope>
       <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
         <exclusion>
           <artifactId>junit-dep</artifactId>
           <groupId>junit</groupId>
@@ -339,6 +478,10 @@
       <scope>test</scope>
       <exclusions>
         <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+        <exclusion>
           <artifactId>junit-dep</artifactId>
           <groupId>junit</groupId>
         </exclusion>
@@ -347,49 +490,95 @@
     <dependency>
       <groupId>org.springframework.data</groupId>
       <artifactId>spring-data-jpa</artifactId>
-      <version>1.11.20.RELEASE</version>
+      <version>1.11.23.RELEASE</version>
       <scope>test</scope>
       <exclusions>
         <exclusion>
           <artifactId>aspectjrt</artifactId>
           <groupId>org.aspectj</groupId>
         </exclusion>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
       </exclusions>
     </dependency>
     <dependency>
       <groupId>org.springframework.ldap</groupId>
       <artifactId>spring-ldap-core</artifactId>
-      <version>2.3.2.RELEASE</version>
+      <version>2.3.3.RELEASE</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.springframework.security</groupId>
       <artifactId>spring-security-aspects</artifactId>
-      <version>4.2.13.RELEASE</version>
+      <version>4.2.21.BUILD-SNAPSHOT</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.springframework.security</groupId>
       <artifactId>spring-security-cas</artifactId>
-      <version>4.2.13.RELEASE</version>
+      <version>4.2.21.BUILD-SNAPSHOT</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-expression</artifactId>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-orm</artifactId>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>commons-logging</artifactId>
+          <groupId>*</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
   </dependencies>
+  <repositories>
+    <repository>
+      <id>spring-snapshot</id>
+      <url>https://repo.spring.io/snapshot</url>
+    </repository>
+  </repositories>
   <build>
     <plugins>
       <plugin>
